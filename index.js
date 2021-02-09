@@ -1,6 +1,10 @@
 // css
 require("./css/style.css");
 
+const { handleHome } = require("./modules/home.js");
+const { handleAbout } = require("./modules/about.js");
+const { handleProject } = require("./modules/project.js");
+
 // router
 const { initialRoutes, historyRouterPush } = require("./router");
 
@@ -21,3 +25,12 @@ window.onload = () => {
     });
   });
 };
+
+/* 원하는 event를 여기다 다시면 됩니다 */
+contentDiv.addEventListener("click", (e) => {
+  const target = e.target;
+
+  if (target.classList.contains("test")) {
+    console.log("click test!");
+  }
+});

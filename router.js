@@ -3,10 +3,6 @@ const homeTemplate = require("./pages/home.hbs");
 const aboutTemplate = require("./pages/about.hbs");
 const projectTemplate = require("./pages/project.hbs");
 
-const { handleHome } = require("./modules/home.js");
-const { handleAbout } = require("./modules/about.js");
-const { handleProject } = require("./modules/project.js");
-
 const Home = homeTemplate();
 const About = aboutTemplate();
 const Project = projectTemplate();
@@ -35,9 +31,6 @@ const historyRouterPush = (pathName, element) => {
 // render
 const renderHTML = (element, route, pathName) => {
   element.innerHTML = route;
-  if (pathName === "/" || pathName === "/home") handleHome();
-  else if (pathName === "/about") handleAbout();
-  else if (pathName === "/project") handleProject();
 };
 
 module.exports = {
