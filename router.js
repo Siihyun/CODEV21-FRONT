@@ -25,11 +25,11 @@ const initialRoutes = (element) => {
 // set browser history
 const historyRouterPush = (pathName, element) => {
   window.history.pushState({}, pathName, window.location.origin + pathName);
-  renderHTML(element, routes[pathName], pathName);
+  renderHTML(element, routes[pathName]);
 };
 
 // render
-const renderHTML = (element, route, pathName) => {
+const renderHTML = (element, route) => {
   element.innerHTML = route;
 };
 
