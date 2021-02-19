@@ -47,4 +47,24 @@ contentDiv.addEventListener("click", (e) => {
   if (target.classList.contains("test")) {
     console.log("click test!");
   }
+
+  const modal = document.querySelector(".modal");
+  const openModal = document.querySelectorAll(".card");
+  const closeModal = document.querySelector(".close");
+
+  openModal.forEach((card) => {
+      card.addEventListener("click", () => {
+          modal.style.display = "block";
+      });
+  });
+
+  closeModal.onclick = function() {
+      modal.style.display = "none";
+  }
+
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
 });
