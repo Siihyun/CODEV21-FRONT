@@ -48,8 +48,13 @@ contentDiv.addEventListener("click", (e) => {
     console.log("click test!");
   }
 
+  // modal
   const modal = document.querySelector(".modal");
-  const openModal = document.querySelectorAll(".card");
+
+  if (target.classList.contains("card")) {
+    modal.style.display = "block";
+  }
+
   const closeModal = document.querySelector(".close");
 
   openModal.forEach((card) => {
@@ -58,11 +63,11 @@ contentDiv.addEventListener("click", (e) => {
       });
   });
 
-  closeModal.onclick = function() {
+  closeModal.onclick = () => {
       modal.style.display = "none";
   }
 
-  window.onclick = function(event) {
+  window.onclick = event => {
       if (event.target == modal) {
           modal.style.display = "none";
       }
