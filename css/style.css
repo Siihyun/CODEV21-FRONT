@@ -29,12 +29,8 @@ header {
 }
 
 /* project.hbs */
-body {
-  margin: 30px;
-}
-
 .project_list {
-  margin: 50px;
+  margin: 80px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
