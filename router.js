@@ -2,16 +2,19 @@
 const homeTemplate = require("./pages/home.hbs");
 const aboutTemplate = require("./pages/about.hbs");
 const projectTemplate = require("./pages/project.hbs");
+const editTemplate = require("./pages/edit.hbs");
 
 const Home = homeTemplate();
 const About = aboutTemplate();
 const Project = projectTemplate();
+const Edit = editTemplate();
 
 const routes = {
   "/": Home,
   "/home": Home,
   "/about": About,
   "/project": Project,
+  "/edit": Edit,
 };
 
 // entry point

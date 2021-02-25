@@ -1,0 +1,25 @@
+<div class="container">
+    <h1 id="edit__header">프로젝트 등록</h1>
+    <input type="text" name="title" id="edit__title" class="edit__component" placeholder="프로젝트 이름을 입력하세요">
+    <hr>
+    <input type="text" name="team" id="edit__team" class="edit__component" placeholder="팀명을 입력하세요">
+    <hr>
+    <input type="text" name="summary" id="edit__summary" class="edit__component" placeholder="프로젝트에 대한 간단한 설명을 입력하세요">
+    <hr>
+    <label for="thumbnail">대표 이미지</label>
+    <input type="file" name="thumbnail" id="thumbnail">
+    <div id="summernote"></div>
+    <button id="edit__save">작성완료</button>
+</div>
+<script>
+    const saveButton = document.querySelector("#edit__save")
+    saveButton.addEventListener("click", (e) => {
+        const content = {}
+        content.main = $('#summernote').summernote('code')
+        content.title = document.querySelector("#edit__title").value
+        content.team = document.querySelector("#edit__team").value
+        content.summary = document.querySelector("#edit__title").value
+        content.thumbnail = document.querySelector("#thumbnail").files[0]
+        console.log(content)
+    })
+</script>

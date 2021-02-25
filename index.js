@@ -24,6 +24,22 @@ window.onload = () => {
       historyRouterPush(pathName, contentDiv);
     });
   });
+  historyRouterPush("/edit", contentDiv)
+
+  $('#summernote').summernote({
+    placeholder: '프로젝트에 대한 설명을 적어주세요',
+    tabsize: 2,
+    height: 500,
+    toolbar: [
+      ['style', ['style']],
+      ['font', ['bold', 'underline', 'clear']],
+      ['color', ['color']],
+      ['para', ['ul', 'ol', 'paragraph']],
+      ['table', ['table']],
+      ['insert', ['link', 'picture', 'video']],
+      ['view', ['fullscreen', 'codeview', 'help']]
+    ]
+  });
 };
 
 const login = document.querySelector("#login")
