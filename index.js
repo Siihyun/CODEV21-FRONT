@@ -40,22 +40,46 @@ window.onload = () => {
       ['view', ['fullscreen', 'codeview', 'help']]
     ]
   });
-};
 
-const login = document.querySelector("#login")
-login.addEventListener("click", (event)=> {
-  event.preventDefault();
+  const saveButton = document.querySelector("#edit__save")
+    saveButton.addEventListener("click", (e) => {
+        const content = {}
+        content.main = $('#summernote').summernote('code')
+        content.title = document.querySelector("#edit__title").value
+        content.team = document.querySelector("#edit__team").value
+        content.summary = document.querySelector("#edit__title").value
+        content.thumbnail = document.querySelector("#thumbnail").files[0]
+        console.log(content)
+  })
 
-  // 로그인 중이면 로그 아웃하기
-  if(login.textContent === "Logout") {
+  const login = document.querySelector("#login")
+  const menu = document.querySelector("#menu")
+
+  login.addEventListener("click", (event)=> {
+    event.preventDefault();
+
+    // 로그인 중이면 로그 아웃하기
+    if(login.textContent === "Logout") {
       login.textContent = "Login"
+      menu.textContent = "Join"
       return
-  }
+    }
 
-  // 로그인이 아니라면 로그인 창 띄우기
-  window.open("./login.html", "_black", 'width=300px,height=300px,toolbars=no,scrollbars=no');
-  
-})
+    // 로그인이 아니라면 로그인 창 띄우기
+    window.open("./login.html", "_black", 'width=300px,height=300px,toolbars=no,scrollbars=no');
+
+    // 로그인이 성공할 경우
+    menu.textContent = "Add"
+  })
+
+  menu.addEventListener("click", (event) => {
+    event.preventDefault()
+    if(menu.textContent === "Add") {
+      window.location = "/edit"
+    }
+  })
+
+};
 /* 원하는 event를 여기다 다시면 됩니다 */
 contentDiv.addEventListener("click", (e) => {
   const target = e.target;
@@ -64,28 +88,29 @@ contentDiv.addEventListener("click", (e) => {
     console.log("click test!");
   }
 
+
   // modal
-  const modal = document.querySelector(".modal");
+  // const openModal = document.querySelector(".modal");
 
-  if (target.classList.contains("card")) {
-    modal.style.display = "block";
-  }
+  // if (target.classList.contains("card")) {
+  //   openModal.style.display = "block";
+  // }
 
-  const closeModal = document.querySelector(".close");
+  // const closeModal = document.querySelector(".close");
 
-  openModal.forEach((card) => {
-      card.addEventListener("click", () => {
-          modal.style.display = "block";
-      });
-  });
+  // openModal.forEach((card) => {
+  //     card.addEventListener("click", () => {
+  //         modal.style.display = "block";
+  //     });
+  // });
 
-  closeModal.onclick = () => {
-      modal.style.display = "none";
-  }
+  // closeModal.onclick = () => {
+  //     modal.style.display = "none";
+  // }
 
-  window.onclick = event => {
-      if (event.target == modal) {
-          modal.style.display = "none";
-      }
-  }
+  // window.onclick = event => {
+  //     if (event.target == modal) {
+  //         modal.style.display = "none";
+  //     }
+  // }
 });
