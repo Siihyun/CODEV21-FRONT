@@ -6,7 +6,7 @@ header {
   position: relative;
   padding: 80px;
   background-color: var(--sub-color);
-  background: url(//t1.kakaocdn.net/service_if_kakao_prod/images/pc/bg_bye.png) 0 0 no-repeat;
+  background: url("../img/header.jpg") 0 0 no-repeat;
   background-size: cover;
   height: 300px;
   color: white;

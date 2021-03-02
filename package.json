@@ -20,6 +20,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "file-loader": "^6.2.0",
     "http-server": "^0.12.3",
     "npx": "^10.2.2"
   }

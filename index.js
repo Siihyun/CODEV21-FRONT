@@ -17,6 +17,8 @@ initialRoutes(contentDiv);
 window.onload = () => {
   const historyLinker = document.querySelectorAll(".history");
 
+  historyRouterPush("/edit", contentDiv)
+
   historyLinker.forEach((element) => {
     element.addEventListener("click", (event) => {
       const pathName = event.target.getAttribute("route");
@@ -24,7 +26,7 @@ window.onload = () => {
       historyRouterPush(pathName, contentDiv);
     });
   });
-  historyRouterPush("/edit", contentDiv)
+  
 
   $('#summernote').summernote({
     placeholder: '프로젝트에 대한 설명을 적어주세요',
