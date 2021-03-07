@@ -23,9 +23,12 @@ document.querySelector('#submit').addEventListener("click", () => {
         // 스토리지에 저장
         localStorage.setItem('j2kb-accessToken', resp.data.accessToken);
         localStorage.setItem('j2kb-userId', resp.data.userId)
+        
         // 부모창으로 로그인 결과 전송
         const login = opener.document.querySelector("#login")
+        const menu = opener.document.querySelector("#menu")
         login.textContent = "Logout"
+        menu.textContent = "Add"
         self.close()
       }
     }).catch(()=>{

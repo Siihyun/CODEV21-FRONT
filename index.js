@@ -69,9 +69,6 @@ window.onload = () => {
 
     // 로그인이 아니라면 로그인 창 띄우기
     window.open("./login.html", "_black", 'width=300px,height=300px,toolbars=no,scrollbars=no');
-
-    // 로그인이 성공할 경우
-    menu.textContent = "Add"
   })
 
   menu.addEventListener("click", (event) => {
