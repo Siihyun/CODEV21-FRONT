@@ -30,6 +30,7 @@ document.querySelector('#submit').addEventListener("click", () => {
         login.textContent = "Logout"
         menu.textContent = "Add"
         self.close()
+        return
       }
       alert("로그인 할 수 없습니다.")
     }).catch((e)=>{
