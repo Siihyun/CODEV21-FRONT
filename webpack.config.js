@@ -26,6 +26,12 @@ module.exports = {
   ],
   devServer: {
     historyApiFallback: true,
+    host: '0.0.0.0',
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+      "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+    }
   },
   module: {
     rules: [
@@ -38,8 +44,12 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
-        test: /\.(jpg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        test: /\.(jpg|jpeg|png)$/,
         use: [ 'file-loader' ],
+      },
+      {
+        test: /\.(json)$/,
+        loader: [ 'json' ],
       },
     ],
   },
