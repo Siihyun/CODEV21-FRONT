@@ -14,10 +14,10 @@ const contentDiv = document.querySelector("#app-content");
 // Browser History
 initialRoutes(contentDiv);
 
+historyRouterPush("/edit", contentDiv)
+
 window.onload = () => {
   const historyLinker = document.querySelectorAll(".history");
-
-  historyRouterPush("/edit", contentDiv)
 
   historyLinker.forEach((element) => {
     element.addEventListener("click", (event) => {
@@ -45,14 +45,41 @@ window.onload = () => {
 
   const saveButton = document.querySelector("#edit__save")
     saveButton.addEventListener("click", (e) => {
-        const content = {}
-        content.main = $('#summernote').summernote('code')
-        content.title = document.querySelector("#edit__title").value
-        content.team = document.querySelector("#edit__team").value
-        content.summary = document.querySelector("#edit__title").value
-        content.thumbnail = document.querySelector("#thumbnail").files[0]
-        console.log(content)
-  })
+        const thumbnail = document.querySelector("#thumbnail").files[0]
+        if(!thumbnail) {
+          alert("섬네일 파일이 필요합니다.")
+          return
+        }
+
+        if(thumbnail.name.endsWith(".png") || thumbnail.name.endsWith(".jpg") || thumbnail.name.endsWith(".jpeg")) {
+          const formdata = new FormData();
+          formdata.append("image-file", thumbnail, thumbnail.name);
+
+          const data = {}
+          data.content = $('#summernote').summernote('code')
+          data.title = document.querySelector("#edit__title").value
+          data.team = document.querySelector("#edit__team").value
+          data.summary = document.querySelector("#edit__title").value
+          formdata.append("json-data", JSON.stringify(data))        
+
+          var requestOptions = {
+              method: 'POST',
+              body: formdata,
+              redirect: 'follow'
+          };
+
+          fetch("http://localhost:9080/dummy/edit", requestOptions)
+          .then(response => response.text())
+          .then(result => console.log(result))
+          .catch(error => console.log('error', error));
+          
+          window.location = "/project"
+          return
+        }
+
+        alert("jpg와 png파일만 업로드 가능합니다.")        
+        
+    })
 
   const login = document.querySelector("#login")
   const menu = document.querySelector("#menu")
