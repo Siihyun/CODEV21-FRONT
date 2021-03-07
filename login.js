@@ -31,7 +31,9 @@ document.querySelector('#submit').addEventListener("click", () => {
         menu.textContent = "Add"
         self.close()
       }
-    }).catch(()=>{
+      alert("로그인 할 수 없습니다.")
+    }).catch((e)=>{
+      console.log(e)
       alert("로그인 할 수 없습니다.")
     })
   })
