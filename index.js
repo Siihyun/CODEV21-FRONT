@@ -85,7 +85,7 @@ const initEditor = () => {
 
   const saveButton = document.querySelector("#edit__save")
     saveButton.addEventListener("click", (e) => {
-        if(!llocalStorage.getItem('j2kb-accessToken')) {
+        if(!localStorage.getItem('j2kb-accessToken')) {
           alert("인증에 문제가 있습니다.")
           return
         }
@@ -118,8 +118,8 @@ const initEditor = () => {
                 'Authorization': 'Bear ' + token
             },
           };
-
-          fetch("http://localhost:9080/dummy/edit", requestOptions)
+          
+          fetch("http://34.64.124.246:8080/api/v1/boards", requestOptions)
           .then(response => response.text())
           .then(result => console.log(result))
           .catch(error => console.log('error', error));
