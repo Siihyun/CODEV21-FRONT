@@ -11,15 +11,3 @@
     <div id="summernote"></div>
     <button id="edit__save">작성완료</button>
 </div>
-<script>
-    const saveButton = document.querySelector("#edit__save")
-    saveButton.addEventListener("click", (e) => {
-        const content = {}
-        content.main = $('#summernote').summernote('code')
-        content.title = document.querySelector("#edit__title").value
-        content.team = document.querySelector("#edit__team").value
-        content.summary = document.querySelector("#edit__title").value
-        content.thumbnail = document.querySelector("#thumbnail").files[0]
-        console.log(content)
-    })
-</script>

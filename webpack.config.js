@@ -8,6 +8,7 @@ module.exports = {
   entry: {
     router: "./router.js",
     app: "./index.js",
+    login: "./login.js"
   },
 
   output: {
@@ -18,6 +19,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "index.html",
+    }),
+    new HtmlWebpackPlugin({
+      filename: "login.html",
+      template: "login.html",
     }),
     new MiniCssExtractPlugin({ filename: "app.css" }),
     new CleanWebpackPlugin({
