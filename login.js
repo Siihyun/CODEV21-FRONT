@@ -13,10 +13,13 @@ document.querySelector('#submit').addEventListener("click", () => {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
-        'Accept': "application/json",
       },
+      mode: 'cors',
       body: JSON.stringify(data)
     }).then(response => {
+      if(!response.ok) {
+        throw new Error(response.statusText)
+      }
       return response.json()
     }).then(resp => {
       if(!resp.data) {
@@ -33,10 +36,13 @@ document.querySelector('#submit').addEventListener("click", () => {
       const menu = opener.document.querySelector("#menu")
       login.textContent = "Logout"
       menu.textContent = "Add"
-      
-      // 화면 닫기
-      self.close()
     }).catch((e)=>{
-      alert("로그인 할 수 없습니다."+e)
+      console.log("로그인 할 수 없습니다."+e)
+    }).finally(()=> {
+      self.close()
     })
   })
+
+  const close = () => {
+    self.close()
+  }
