@@ -1,11 +1,11 @@
 document.querySelector('#submit').addEventListener("click", () => {
-    const loginUrl = "http://localhost:9080/dummy/login"  
+    const loginUrl = "http://34.64.124.246:8080/api/v1/login"  
     const username = document.querySelector("#username").value
     const password = document.querySelector("#password").value
     
     // json만들기
     const data = {}
-    data.username = username
+    data.email = username
     data.password = password
 
     // 로그인 검증
@@ -19,22 +19,24 @@ document.querySelector('#submit').addEventListener("click", () => {
     }).then(response => {
       return response.json()
     }).then(resp => {
-      if(resp.data) {
-        // 스토리지에 저장
-        localStorage.setItem('j2kb-accessToken', resp.data.accessToken);
-        localStorage.setItem('j2kb-userId', resp.data.userId)
-        
-        // 부모창으로 로그인 결과 전송
-        const login = opener.document.querySelector("#login")
-        const menu = opener.document.querySelector("#menu")
-        login.textContent = "Logout"
-        menu.textContent = "Add"
-        self.close()
-        return
+      if(!resp.data) {
+        alert("로그인 할 수 없습니다.[응답 데이터 없음]")
+        return null
       }
-      alert("로그인 할 수 없습니다.")
+      
+      // 스토리지에 저장
+      opener.localStorage.setItem('j2kb-accessToken', resp.data.accessToken);
+      opener.localStorage.setItem('j2kb-userId', resp.data.userId)
+      
+      // 부모창으로 로그인 결과 전송
+      const login = opener.document.querySelector("#login")
+      const menu = opener.document.querySelector("#menu")
+      login.textContent = "Logout"
+      menu.textContent = "Add"
+      
+      // 화면 닫기
+      self.close()
     }).catch((e)=>{
-      console.log(e)
-      alert("로그인 할 수 없습니다.")
+      alert("로그인 할 수 없습니다."+e)
     })
   })
