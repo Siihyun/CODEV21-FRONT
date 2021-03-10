@@ -8,7 +8,7 @@ module.exports = {
   entry: {
     router: "./router.js",
     app: "./index.js",
-    login: "./login.js"
+    login: "./login.js",
   },
 
   output: {
@@ -44,11 +44,11 @@ module.exports = {
       },
       {
         test: /\.(jpg|jpeg|png)$/,
-        use: [ 'file-loader' ],
+        use: ["file-loader"],
       },
       {
         test: /\.(json)$/,
-        loader: [ 'json' ],
+        loader: ["json"],
       },
     ],
   },

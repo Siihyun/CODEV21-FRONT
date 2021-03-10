@@ -1,0 +1,165 @@
+body {
+  margin: 30px;
+}
+
+.project_list {
+  margin: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 280px;
+  height: 400px;
+  margin: 2rem;
+  background: #ffffff;
+  border-radius: 7px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 10px;
+}
+
+.card-contents {
+  padding: 5%;
+}
+
+.card h1 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.9rem;
+}
+
+.card b {
+  padding: 5%;
+  height: 30px;
+  font-size: 0.8rem;
+  margin-top: 20px;
+}
+
+/* Modal background */
+.modal {
+  display: none;
+  position: fixed;
+  padding: 50px 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 100;
+}
+
+/* Modal contents */
+.modal-content {
+  position: relative;
+  background-color: #ffffff;
+  margin: auto;
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 7px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+/* Add animation */
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  margin: 3%;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgb(221, 221, 221);
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-header h1,
+.modal-header .close {
+  font-size: 1.1em;
+}
+
+.modal-body {
+  margin: 5%;
+}
+
+.modal-body-img {
+  width: 100%;
+  height: 250px;
+}
+
+.modal-body-img div {
+  height: 100%;
+}
+
+.modal-body-des {
+  width: 100%;
+  padding: 30px 0 10px 0;
+}
+
+.modal-footer {
+  margin: 2% 5%;
+  padding-top: 10px;
+  border-top: 2px solid rgb(221, 221, 221);
+  display: flex;
+  justify-content: center;
+}
+
+.modal-footer-btn {
+  font-size: 13px;
+  padding: 12px 30px;
+  letter-spacing: 2px;
+  transition: transform 80ms ease-in;
+}
+
+.modal-footer-btn:active {
+  transform: scale(0.95);
+}
+
+.modal-footer-btn:focus {
+  outline: none;
+}
+
+/* Close */
+.close {
+  color: rgb(119, 119, 119);
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover {
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+}
