@@ -8,7 +8,7 @@ module.exports = {
   entry: {
     router: "./router.js",
     app: "./index.js",
-    login: "./login.js"
+    login: "./login.js",
   },
 
   output: {
@@ -31,12 +31,6 @@ module.exports = {
   ],
   devServer: {
     historyApiFallback: true,
-    host: '0.0.0.0',
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
-      "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
-    }
   },
   module: {
     rules: [
@@ -50,11 +44,11 @@ module.exports = {
       },
       {
         test: /\.(jpg|jpeg|png)$/,
-        use: [ 'file-loader' ],
+        use: ["file-loader"],
       },
       {
         test: /\.(json)$/,
-        loader: [ 'json' ],
+        loader: ["json"],
       },
     ],
   },

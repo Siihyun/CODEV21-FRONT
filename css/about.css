@@ -1,0 +1,54 @@
+.portfolio-wrapper {
+  margin-left: 15rem;
+  margin-right: 15rem;
+  color: white;
+}
+
+.introduce {
+  font-size: 30px;
+  margin-bottom: 50px;
+  margin-top: 10rem;
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+.title {
+  width: 100%;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 10px;
+}
+img {
+  display: block;
+  width: 300px;
+  height: 200px;
+}
+
+.container-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 50px;
+  background-color: #0067a3;
+  border-radius: 5%;
+  margin-bottom: 5rem;
+}
+
+.page {
+  font-size: 1.2rem;
+  margin-bottom: 10rem;
+}
