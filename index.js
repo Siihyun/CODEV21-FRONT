@@ -6,6 +6,8 @@ const { handleHome } = require("./modules/home.js");
 const { handleAbout } = require("./modules/about.js");
 const { handleProject } = require("./modules/project.js");
 const { initEditor } = require("./modules/edit.js");
+const { handleJoin } = require("./modules/join.js");
+
 // router
 const { initialRoutes, historyRouterPush } = require("./router");
 
@@ -36,30 +38,34 @@ contentDiv.addEventListener("click", (e) => {
   }
 
   // modal
-  // const openModal = document.querySelector(".modal");
+  const modal = document.querySelector(".modal");
 
-  // if (target.classList.contains("card")) {
-  //   openModal.style.display = "block";
-  // }
+  if (target.classList.contains("card")) {
+    modal.style.display = "block";
+  }
 
-  // const closeModal = document.querySelector(".close");
-
-  // openModal.forEach((card) => {
-  //     card.addEventListener("click", () => {
-  //         modal.style.display = "block";
-  //     });
-  // });
-
-  // closeModal.onclick = () => {
-  //     modal.style.display = "none";
-  // }
-
-  // window.onclick = event => {
-  //     if (event.target == modal) {
-  //         modal.style.display = "none";
-  //     }
-  // }
 });
+
+/*
+  const modal = document.querySelector(".modal");
+  const openModal = document.querySelectorAll(".card");
+  const closeModal = document.querySelector(".close");
+
+  openModal.forEach((card) => {
+      card.addEventListener("click", () => {
+          modal.style.display = "block";
+      });
+  });
+
+  closeModal.onclick = function() {
+      modal.style.display = "none";
+  }
+
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }*/
 
 const initLogin = () => {
   const login = document.querySelector("#login");
