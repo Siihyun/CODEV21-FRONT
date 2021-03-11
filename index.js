@@ -6,7 +6,9 @@ const { handleHome } = require("./modules/home.js");
 const { handleAbout } = require("./modules/about.js");
 const { handleProject } = require("./modules/project.js");
 const { initEditor } = require("./modules/edit.js");
+const { handleLogin } = require("./modules/login.js");
 const { handleJoin } = require("./modules/join.js");
+
 
 // router
 const { initialRoutes, historyRouterPush } = require("./router");
@@ -24,8 +26,6 @@ window.onload = () => {
     element.addEventListener("click", (event) => {
       const pathName = event.target.getAttribute("route");
       historyRouterPush(pathName, contentDiv);
-      initLogin();
-      initEditor();
     });
   });
 };
@@ -36,6 +36,10 @@ contentDiv.addEventListener("click", (e) => {
   if (target.classList.contains("test")) {
     console.log("click test!");
   }
+
+
+  handleLogin()
+});
 
   // modal
   const modal = document.querySelector(".modal");
@@ -75,6 +79,7 @@ const initLogin = () => {
     event.preventDefault();
 
     // 로그인 중이면 로그 아웃하기
+
     if (login.textContent === "Logout") {
       logout();
       return;

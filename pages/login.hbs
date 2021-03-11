@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="min-h-screen flex flex-col justify-center items-center m-28">
+        <div class="w-screen max-w-md flex flex-auto flex-col">
+            <div class="bg-white px-6 py-8 rounded text-black w-full">
+                <h1 class="mb-8 text-3xl text-center">Login</h1>
+                <input type="email" class="email block border border-grey-light w-full p-3 rounded mb-4" name="email"
+                    placeholder="Email" id="email">
+               <input type="password" class="password block border border-grey-light w-full p-3 rounded mb-4"
+                    name="password" placeholder="Password" id="password">
+               <button type="button"
+                    id="submit"
+                    class="w-full text-center py-3 rounded bg-black text-white my-1 hover:bg-gray-600 focus:outline-none">Login</button>
+            </div>
+            <div class="text-white mt-6">
+                J2KB에서 오셨는데 계정이 없으신가요?
+                <a class="border-b-2" href="/join">
+                    가입하기
+                </a>
+            </div>
+        </div>
+    </div>
+    {{!-- <script>
+        console.log("hi")
+        document.querySelector('#submit').addEventListener("click", (e) => {
+            e.preventDefault()
+            console.log("hi")
+            const loginUrl = "http://34.64.124.246:8080/api/v1/login"  
+            const username = document.querySelector("#username").value
+            const password = document.querySelector("#password").value
+            
+            // json만들기
+            const data = {}
+            data.email = username
+            data.password = password
+
+            // 로그인 검증
+            fetch(loginUrl, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors',
+            body: JSON.stringify(data)
+            }).then(response => {
+            if(!response.ok) {
+                alert("로그인 할 수 없습니다.[요청 실패]");
+            }
+            return response.json()
+            }).then(resp => {
+            if(!resp.data) {
+                alert("로그인 할 수 없습니다.[응답 데이터 없음]")
+                return null
+            }
+            
+            // 스토리지에 저장
+            localStorage.setItem('j2kb-accessToken', resp.data.accessToken);
+            localStorage.setItem('j2kb-userId', resp.data.userId)
+            
+            // 로그인 결과 반영
+            const login = document.querySelector("#login")
+            //const menu = document.querySelector("#menu")
+            login.textContent = "Logout"
+            //menu.textContent = "Add"
+            
+            }).catch((e)=>{
+            console.log("로그인 할 수 없습니다."+e)
+            })
+        })
+    </script> --}}
+</body>
+
+</html>
