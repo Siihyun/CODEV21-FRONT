@@ -1,47 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <title>Join</title>
-</head>
-
-<body>
-    <form action="#" onsubmit="return handleJoin()" method="post"
-        class="min-h-screen flex flex-col justify-center items-center m-28">
-        <div class="w-screen max-w-md flex flex-auto flex-col">
-            <div class="bg-white px-6 py-8 rounded text-black w-full">
-                <h1 class="mb-8 text-3xl text-center">Join us</h1>
-                <input type="email" class="email block border border-grey-light w-full p-3 rounded mb-4" name="email"
-                    placeholder="Email">
-                <input type="text" class="username block border border-grey-light w-full p-3 rounded mb-4"
-                    name="username" placeholder="Name">
-                <input type="password" class="password block border border-grey-light w-full p-3 rounded mb-4"
-                    name="password" placeholder="Password">
-                <input type="password" class="confirm_password block border border-grey-light w-full p-3 rounded mb-4"
-                    name="confirm_password" placeholder="Confirm Password">
-                <select name="join_gisu" class="join_gisu mb-2">
-                    <option value="1기" disabled>1기</option>
-                    <option value="2기" selected>2기</option>
-                </select>
-                <button type="submit"
-                    class="join_button w-full text-center py-3 rounded bg-black text-white my-1 hover:bg-gray-600 focus:outline-none">가입하기</button>
-                <div class="text-center text-sm text-grey-dark mt-4">
-                    J2KB 회원만 가입이 가능합니다.
-                </div>
-            </div>
-
-            <div class="text-white mt-6">
-                이미 계정이 있으신가요?
-                <a class="border-b-2" href="/login.html">
-                    Log in
-                </a>
+<form action="#" onsubmit="return handleJoin()" method="post"
+    class="min-h-screen flex flex-col justify-center items-center m-28">
+    <div class="w-screen max-w-md flex flex-auto flex-col">
+        <div class="bg-white px-6 py-8 rounded text-black w-full">
+            <h1 class="mb-8 text-3xl text-center">Join us</h1>
+            <input type="email" class="email block border border-grey-light w-full p-3 rounded mb-4" name="email"
+                placeholder="Email">
+            <input type="text" class="username block border border-grey-light w-full p-3 rounded mb-4" name="username"
+                placeholder="Name">
+            <input type="password" class="password block border border-grey-light w-full p-3 rounded mb-4"
+                name="password" placeholder="Password">
+            <input type="password" class="confirm_password block border border-grey-light w-full p-3 rounded mb-4"
+                name="confirm_password" placeholder="Confirm Password">
+            <select name="join_gisu" class="join_gisu mb-2">
+                <option value="1기" disabled>1기</option>
+                <option value="2기" selected>2기</option>
+            </select>
+            <button type="submit"
+                class="join_button w-full text-center py-3 rounded bg-black text-white my-1 hover:bg-gray-600 focus:outline-none">가입하기</button>
+            <div class="text-center text-sm text-grey-dark mt-4">
+                J2KB 회원만 가입이 가능합니다.
             </div>
         </div>
-    </form>
-</body>
 
-</html>
+        <div class="text-white mt-6">
+            이미 계정이 있으신가요?
+            <a class="border-b-2" href="/login.html">
+                Log in
+            </a>
+        </div>
+    </div>
+</form>
+</body>

@@ -1,6 +1,7 @@
 // css
 require("./css/style.css");
 require("./css/about.css");
+require("./css/project.css");
 
 const { handleHome } = require("./modules/home.js");
 const { handleAbout } = require("./modules/about.js");
@@ -60,7 +61,7 @@ contentDiv.addEventListener("click", (e) => {
   if (target.classList.contains("test")) {
     console.log("click test!");
   }
-
+  
   // modal
   const modal = document.querySelector(".modal");
 
