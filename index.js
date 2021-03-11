@@ -39,7 +39,6 @@ contentDiv.addEventListener("click", (e) => {
 
 
   handleLogin()
-});
 
   // modal
   const modal = document.querySelector(".modal");
