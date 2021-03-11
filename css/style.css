@@ -178,3 +178,7 @@ header {
   border-radius: 5%;
   padding: 6px 12px;
 }
+
+.hide{
+  display: none;
+}

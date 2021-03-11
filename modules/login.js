@@ -1,4 +1,15 @@
 const handleLogin = () => {
+  const login = document.querySelector("#login")
+  const edit = document.querySelector("#edit")
+  const join = document.querySelector("#join")
+
+  if (login.textContent === "Logout") {
+    localStorage.removeItem("j2kb-accessToken");
+    login.textContent = "Login"
+    edit.classList.add("hide")
+    join.classList.remove("hide")
+  }
+
   document.querySelector('#submit').addEventListener("click", (e) => {
     e.preventDefault()
     const loginUrl = "http://34.64.124.246:8080/api/v1/login"  
@@ -34,8 +45,10 @@ const handleLogin = () => {
       localStorage.setItem('j2kb-userId', resp.data.userId)
       
       // 로그인 결과 반영
-      const login = document.querySelector("#login")
       login.textContent = "Logout"
+      edit.classList.remove("hide")
+      join.classList.add("hide")
+
       window.location = "/home"
     }).catch((e)=>{
       console.log("로그인 할 수 없습니다."+e)

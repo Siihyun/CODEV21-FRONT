@@ -1,4 +1,4 @@
-const initEditor = () => {
+const handleEdit = () => {
     $('#summernote').summernote({
       placeholder: '프로젝트에 대한 설명을 적어주세요',
       tabsize: 2,
@@ -65,5 +65,5 @@ const initEditor = () => {
   }
 
   module.exports = {
-    initEditor
+    handleEdit
   }
