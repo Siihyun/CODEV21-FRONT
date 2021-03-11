@@ -4,7 +4,9 @@ require("./css/style.css");
 const { handleHome } = require("./modules/home.js");
 const { handleAbout } = require("./modules/about.js");
 const { handleProject } = require("./modules/project.js");
-const { initEditor } = require("./modules/edit.js")
+const { initEditor } = require("./modules/edit.js");
+const { handleLogin } = require("./modules/login.js");
+
 // router
 const { initialRoutes, historyRouterPush } = require("./router");
 
@@ -22,8 +24,8 @@ window.onload = () => {
     element.addEventListener("click", (event) => {
       const pathName = event.target.getAttribute("route");
       historyRouterPush(pathName, contentDiv);
-      initLogin()
-      initEditor()
+      //initLogin()
+      //initEditor()
     });
   });
 };
@@ -35,31 +37,7 @@ contentDiv.addEventListener("click", (e) => {
     console.log("click test!");
   }
 
-
-  // modal
-  // const openModal = document.querySelector(".modal");
-
-  // if (target.classList.contains("card")) {
-  //   openModal.style.display = "block";
-  // }
-
-  // const closeModal = document.querySelector(".close");
-
-  // openModal.forEach((card) => {
-  //     card.addEventListener("click", () => {
-  //         modal.style.display = "block";
-  //     });
-  // });
-
-  // closeModal.onclick = () => {
-  //     modal.style.display = "none";
-  // }
-
-  // window.onclick = event => {
-  //     if (event.target == modal) {
-  //         modal.style.display = "none";
-  //     }
-  // }
+  handleLogin()
 });
 
 const initLogin = () => {
@@ -72,11 +50,7 @@ const initLogin = () => {
     // 로그인 중이면 로그 아웃하기
     if(login.textContent === "Logout") {
       logout()
-      return
     }
-
-    // 로그인이 아니라면 로그인 창 띄우기
-    window.open("./login.html", "_black", 'width=300px,height=300px,toolbars=no,scrollbars=no');
   })
 
   menu.addEventListener("click", (event) => {
