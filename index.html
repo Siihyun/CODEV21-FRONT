@@ -5,7 +5,9 @@
   <meta charset="UTF-8" />
   <title>J2KB</title>
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
   <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 </head>
@@ -23,14 +25,17 @@
         <li class="history" route="/home">Home</li>
         <li class="history" route="/about">About</li>
         <li class="history" route="/project">Project</li>
-        <li class="history" route="/edit" id="menu">Join</li>
-        <li class="history" route="/login" id="login">Login</li>
+        <li class="history" route="/edit" id="menu">Add</li>
+        <li class="history" route="/join">Join</li>
+        <li id="login">Login</li>
       </ul>
     </nav>
     <header class="mb-12">
       <div class="header-content"></div>
     </header>
     <!--Content-->
+    <div id="app-content"></div>
+
     <!-- modal -->
     <div class="modal">
       <div class="modal-content">
@@ -69,7 +74,6 @@
         </div>
       </div>
     </div>
-    <div id="app-content"></div>
   </div>
 </body>
 

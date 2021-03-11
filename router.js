@@ -4,12 +4,14 @@ const aboutTemplate = require("./pages/about.hbs");
 const projectTemplate = require("./pages/project.hbs");
 const editTemplate = require("./pages/edit.hbs");
 const loginTemplate = require("./pages/login.hbs");
+const joinTemplate = require("./pages/join.hbs");
 
 const Home = homeTemplate();
 const About = aboutTemplate();
 const Project = projectTemplate();
 const Edit = editTemplate();
 const Login = loginTemplate();
+const Join = joinTemplate();
 
 const routes = {
   "/": Home,
@@ -18,6 +20,7 @@ const routes = {
   "/project": Project,
   "/edit": Edit,
   "/login": Login,
+  "/join": Join
 };
 
 // entry point

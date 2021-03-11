@@ -1,40 +1,9 @@
-.history {
-  cursor: pointer;
-}
-
-header {
-  position: relative;
-  padding: 80px;
-  background-color: var(--sub-color);
-  background: url("../img/header.jpg") 0 0 no-repeat;
-  background-size: cover;
-  height: 300px;
-  color: white;
-}
-
-.header-title {
-  position: relative;
-  z-index: 10;
-}
-
-.header-content::after{
-  position: absolute;
-  z-index: 5;
-  top: 0;
-  left: 0;
-  background: rgba(0,0,0,.8);
-  width: 100%;
-  height: 100%;
-  content: "";
-}
-
-/* project.hbs */
-.project_wrap {
-  padding: 0 10%;
+body {
+  margin: 30px;
 }
 
 .project_list {
-  margin: 80px;
+  margin: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -44,10 +13,9 @@ header {
   width: 280px;
   height: 400px;
   margin: 2rem;
-  background: rgb(29, 29, 29);
-  color: #ffffff;
-  border: 2px solid rgb(119, 119, 119);
+  background: #ffffff;
   border-radius: 7px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   overflow: hidden;
   display: flex;
@@ -56,7 +24,7 @@ header {
 }
 
 .card:hover {
-  box-shadow: 5px 5px 20px rgb(66, 66, 66);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .card-image {
@@ -65,9 +33,8 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
-
 
 .card-contents {
   padding: 5%;
@@ -75,21 +42,21 @@ header {
 
 .card h1 {
   font-size: 1.1rem;
-}
-
-.card b {
-  font-size: 0.8rem;
-  margin: 5px 0;
+  margin-bottom: 10px;
 }
 
 .card p {
-  margin-top: 17px;
   font-size: 0.9rem;
-  height: 85px;
-  overflow: hidden;
 }
 
-/* Modal */
+.card b {
+  padding: 5%;
+  height: 30px;
+  font-size: 0.8rem;
+  margin-top: 20px;
+}
+
+/* Modal background */
 .modal {
   display: none;
   position: fixed;
@@ -103,6 +70,7 @@ header {
   z-index: 100;
 }
 
+/* Modal contents */
 .modal-content {
   position: relative;
   background-color: #ffffff;
@@ -116,30 +84,30 @@ header {
   animation-duration: 0.4s;
 }
 
+/* Add animation */
 @keyframes animatetop {
   from {
     top: -300px;
-    opacity: 0
+    opacity: 0;
   }
 
   to {
     top: 0;
-    opacity: 1
+    opacity: 1;
   }
 }
 
 .modal-header {
   margin: 3%;
   padding-bottom: 10px;
-  border-bottom: 1px solid rgb(221, 221, 221);
+  border-bottom: 2px solid rgb(221, 221, 221);
   display: flex;
   justify-content: space-between;
 }
 
 .modal-header h1,
-.modal-header .modal_edit {
+.modal-header .close {
   font-size: 1.1em;
-  font-weight: bold;
 }
 
 .modal-body {
@@ -172,14 +140,7 @@ header {
   font-size: 13px;
   padding: 12px 30px;
   letter-spacing: 2px;
-  border-radius: 15px;
-  background: rgb(66, 66, 66);
-  color: white;
   transition: transform 80ms ease-in;
-}
-
-.modal-footer-btn:hover {
-  background: #000000;
 }
 
 .modal-footer-btn:active {
@@ -190,16 +151,7 @@ header {
   outline: none;
 }
 
-.modal_edit {
-  color: rgb(119, 119, 119);
-}
-
-.modal_edit:hover {
-  color: #000000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
+/* Close */
 .close {
   color: rgb(119, 119, 119);
   font-size: 28px;
@@ -210,32 +162,4 @@ header {
   color: #000000;
   text-decoration: none;
   cursor: pointer;
-}
-
-
-.container {
-  min-height: 100%;
-  margin: 80px;
-  color: #ffffff;
-  align-self: center;
-}
-
-.edit__component{
-  width: 720px;
-  font-size: 18px;
-  background-color: transparent;
-}
-
-#edit__header {
-  font-size: 48px;
-}
-.note-editable { 
-  background-color: black !important; color: white !important; 
-}
-
-#edit__save {
-  background-color: #ff9920;
-  border: 1px solid #a8783f;
-  border-radius: 5%;
-  padding: 6px 12px;
 }
