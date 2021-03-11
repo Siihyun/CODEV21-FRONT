@@ -1,9 +1,14 @@
 body {
-  margin: 30px;
+  margin: 0 50px;
 }
 
 .history {
   cursor: pointer;
+}
+
+.navbar__menu {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 header {
@@ -12,13 +17,25 @@ header {
   background-color: var(--sub-color);
   background: url("../img/header.jpg") 0 0 no-repeat;
   background-size: cover;
-  height: 300px;
+  height: 600px;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header-title {
   position: relative;
   z-index: 10;
+}
+
+.header-title img {
+  width: 100px;
+  height: 100px;
+}
+
+.header-title p {
+  font-size: 30px;
 }
 
 .header-content::after{

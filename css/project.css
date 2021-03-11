@@ -1,5 +1,14 @@
 .project_wrap {
-  padding: 0 9%;
+  padding: 0 8%;
+}
+
+.intro {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  margin-bottom: 50px;
+  margin-top: 10rem;
+  color: white;
 }
 
 .project_list {
