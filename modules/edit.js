@@ -40,16 +40,18 @@ const handleEdit = () => {
             data.gisuId = 1
             data.teamId = 1
 
-            console.log(JSON.stringify(data))
-            formdata.append("json-data", JSON.stringify(data))        
+            const blob = new Blob([JSON.stringify(data)], { type: "application/json"})
+            formdata.append("json-data", blob)        
   
             var requestOptions = {
                 method: 'POST',
                 body: formdata,
                 redirect: 'follow',
                 headers: {
-                  'Content-Type': 'multipart/mixed;charset=UTF-8;',
-                  'Authorization': 'Bearer ' + token
+                  //'Content-Type': 'multipart/form-data;',
+                  'Authorization': 'Bearer ' + token,
+                  'Accept': '*/*',
+                  'Accept-Encoding':'gzip, deflate, br',
               },
             };
             
