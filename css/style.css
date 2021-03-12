@@ -171,12 +171,16 @@ header {
   cursor: pointer;
 }
 
-/* */
+/* edit */
+#app-content{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
 .container {
   min-height: 100%;
   margin: 80px;
   color: #ffffff;
-  align-self: center;
 }
 
 .edit__component{
