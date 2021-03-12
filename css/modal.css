@@ -1,58 +1,15 @@
-body {
-  margin: 0 0px;
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
 
-.history {
-  cursor: pointer;
-}
-
-.navbar__menu {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-header {
-  z-index: -2;
-  position: absolute;
-  padding: 80px;
-  background-color: var(--sub-color);
-  background: url("../img/header.jpg") 0 0 no-repeat;
-  background-size: cover;
-  height: 100%;
-  min-height: 1000px;
-  width: 100%;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header-title {
-  position: relative;
-  z-index: 10;
-}
-
-.header-title img {
-  width: 100px;
-  height: 100px;
-}
-
-.header-title p {
-  font-size: 30px;
-}
-
-.header-content::after {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.8);
-  width: 100%;
-  height: 100%;
-  content: "";
-}
-
-/* Project modal */
 .modal {
   display: none;
   position: fixed;
@@ -66,6 +23,10 @@ header {
   z-index: 100;
 }
 
+.visible {
+  display: block;
+}
+
 .modal-content {
   position: relative;
   background-color: #ffffff;
@@ -77,18 +38,6 @@ header {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   animation-name: animatetop;
   animation-duration: 0.4s;
-}
-
-@keyframes animatetop {
-  from {
-    top: -300px;
-    opacity: 0;
-  }
-
-  to {
-    top: 0;
-    opacity: 1;
-  }
 }
 
 .modal-header {
@@ -169,42 +118,4 @@ header {
   color: #000000;
   text-decoration: none;
   cursor: pointer;
-}
-
-/* edit */
-#app-content{
-  align-items: center;
-  justify-content: center;
-  display: flex;
-}
-
-.container {
-  min-height: 100%;
-  margin: 80px;
-  color: #ffffff;
-}
-
-.edit__component {
-  width: 720px;
-  font-size: 18px;
-  background-color: transparent;
-}
-
-#edit__header {
-  font-size: 48px;
-}
-.note-editable {
-  background-color: black !important;
-  color: white !important;
-}
-
-#edit__save {
-  background-color: #ff9920;
-  border: 1px solid #a8783f;
-  border-radius: 5%;
-  padding: 6px 12px;
-}
-
-.hide {
-  display: none;
 }
