@@ -2,7 +2,6 @@ const modal = document.querySelector(".modal");
 
 const toggleModal = () => {
   modal.classList.toggle("visible");
-  console.log(modal);
 };
 
 const initModal = () => {

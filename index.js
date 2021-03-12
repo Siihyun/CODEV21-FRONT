@@ -3,10 +3,14 @@ require("./css/style.css");
 require("./css/about.css");
 require("./css/project.css");
 require("./css/modal.css");
+require("./img/codev.jpg");
+require("./img/good.gif");
+require("./img/image.jpg");
+require("./img/other.jpg");
 
 const { handleHome } = require("./modules/home.js");
 const { handleAbout } = require("./modules/about.js");
-const { handleProject } = require("./modules/project.js");
+const { handleProject, getAllPost, getPost } = require("./modules/project.js");
 const { handleEdit } = require("./modules/edit.js");
 const { handleLogin } = require("./modules/login.js");
 const { handleJoin } = require("./modules/join.js");
@@ -33,6 +37,9 @@ window.onload = () => {
       }
       if (pathName === "/login") {
         handleLogin();
+      }
+      if (pathName === "/project") {
+        handleProject();
       }
     });
   });
