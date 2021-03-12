@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <div class="text-white mt-6">
+        <div class="text-white mt-6 text-center">
             이미 계정이 있으신가요?
             <a class="border-b-2" href="/login.html">
                 Log in
@@ -30,4 +30,10 @@
         </div>
     </div>
 </form>
+
+<script>
+    function popupGithub() {
+        window.open('${loginUrl}', 'popupGithub', 'width=700,height=500,scrollbars=0,toolbar=0,menubar=no')
+    }
+</script>
 </body>
