@@ -28,7 +28,7 @@ const handleEdit = () => {
             alert("섬네일 파일이 필요합니다.")
             return
           }
-  
+
           if(thumbnail.name.endsWith(".png") || thumbnail.name.endsWith(".jpg") || thumbnail.name.endsWith(".jpeg")) {
             const formdata = new FormData();
             formdata.append("image-file", thumbnail, thumbnail.name);
@@ -36,8 +36,11 @@ const handleEdit = () => {
             const data = {}
             data.content = $('#summernote').summernote('code')
             data.title = document.querySelector("#edit__title").value
-            data.team = document.querySelector("#edit__team").value
             data.summary = document.querySelector("#edit__title").value
+            data.gisuId = 1
+            data.teamId = 1
+
+            console.log(JSON.stringify(data))
             formdata.append("json-data", JSON.stringify(data))        
   
             var requestOptions = {
@@ -45,17 +48,17 @@ const handleEdit = () => {
                 body: formdata,
                 redirect: 'follow',
                 headers: {
-                  'Content-Type': 'application/x-www-form-urlencoded',
-                  'Authorization': 'Bear ' + token
+                  'Content-Type': 'multipart/mixed;charset=UTF-8;',
+                  'Authorization': 'Bearer ' + token
               },
             };
             
             fetch("http://34.64.124.246:8080/api/v1/boards", requestOptions)
-            .then(response => response.text())
+            .then(response => response.json())
             .then(result => console.log(result))
             .catch(error => console.log('error', error));
             
-            window.location = "/project"
+            //window.location = "/project"
             return
           }
   
