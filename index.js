@@ -6,7 +6,12 @@ require("./css/modal.css");
 require("./img/codev.jpg");
 require("./img/good.gif");
 require("./img/image.jpg");
-require("./img/other.jpg");
+require("./img/logo1.jpg");
+require("./img/logo2.jpg");
+require("./img/logo3.jpg");
+require("./img/op2.jpg");
+require("./img/op3.jpg");
+require("./img/op4.jpg");
 
 const { handleHome } = require("./modules/home.js");
 const { handleAbout } = require("./modules/about.js");
