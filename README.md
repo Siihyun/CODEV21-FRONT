@@ -1,5 +1,7 @@
 # CODEV21 프로젝트
 
+![image](https://user-images.githubusercontent.com/44644821/111016085-3edc9d00-83ef-11eb-8cae-e43b678f84e8.png)
+
 <br>
 
 ## 🔖 0. 소개
